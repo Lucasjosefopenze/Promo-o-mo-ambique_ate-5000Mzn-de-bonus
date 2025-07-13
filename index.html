@@ -1,0 +1,129 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placard Bet Moçambique</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Countdown -->
+  <div class="bg-green-600 text-white text-center py-3 text-sm font-semibold">
+    ⏳ Promoção termina em: <span id="countdown">--:--:--</span>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="w-full">
+    <img 
+      src="https://i.postimg.cc/hG0TSJpP/Hitube-jxfijx-Y22y-2025-05-25-07-51-27.jpg" 
+      alt="Placard Bet Promo"
+      class="w-full h-auto object-cover"
+    />
+  </div>
+
+  <!-- Main Section -->
+  <section class="px-4 sm:px-6 py-10 max-w-3xl mx-auto text-center">
+    <h1 class="text-3xl sm:text-5xl font-bold text-green-400 mb-4 animate-fade-in">
+      Ganha até 5.000 MZN com a Placard Bet!
+    </h1>
+    <p class="text-base sm:text-lg text-gray-300 mb-4 animate-fade-in">
+      Não percas esta oportunidade exclusiva. Entra agora no mundo das apostas e começa a ganhar com confiança!
+    </p>
+    <p class="text-base sm:text-lg text-gray-400 mb-6 animate-fade-in">
+      A Placard Bet oferece-te segurança, odds incríveis e um bónus de boas-vindas que faz a diferença. O registo é rápido e gratuito!
+    </p>
+
+    <!-- Benefícios -->
+    <div class="grid sm:grid-cols-3 gap-6 text-left mb-10 animate-fade-in">
+      <div class="bg-gray-900 p-4 rounded-lg shadow border border-green-800">
+        <h2 class="font-semibold text-green-400 text-lg mb-2">🎁 Bónus Inicial</h2>
+        <p>Recebe até 5.000 MZN no teu 1º depósito!</p>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-lg shadow border border-green-800">
+        <h2 class="font-semibold text-green-400 text-lg mb-2">📱 Apostas ao Vivo</h2>
+        <p>Aposta em jogos em tempo real com estatísticas ao minuto.</p>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-lg shadow border border-green-800">
+        <h2 class="font-semibold text-green-400 text-lg mb-2">🔐 100% Seguro</h2>
+        <p>Confiança total com pagamentos rápidos e legais em Moçambique.</p>
+      </div>
+    </div>
+
+    <!-- Aviator Section -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow border border-red-600 mb-10 animate-fade-in">
+      <h2 class="text-2xl font-bold text-red-500 mb-3">✈️ Aviator: O jogo que dá muitas rosas!</h2>
+      <p class="text-gray-300 mb-2">
+        Aviator é o jogo mais popular em Moçambique. Sobe o avião e recolhe o prémio antes que ele caia! Jogadores já faturaram milhares de MZN em minutos.
+      </p>
+      <p class="text-red-400 font-semibold">
+        💥 Sobe, aposta e levanta — tudo em segundos!
+      </p>
+    </div>
+
+    <!-- Pagamentos locais -->
+    <div class="mb-8 animate-fade-in">
+      <h3 class="text-lg font-semibold text-white mb-2">💳 Pagamentos com:</h3>
+      <div class="flex justify-center flex-wrap gap-4 text-gray-200">
+        <span class="bg-gray-700 px-4 py-2 rounded-full border border-green-600">M-Pesa</span>
+        <span class="bg-gray-700 px-4 py-2 rounded-full border border-green-600">e-Mola</span>
+        <span class="bg-gray-700 px-4 py-2 rounded-full border border-green-600">mKesh</span>
+      </div>
+    </div>
+
+    <!-- Call-to-Action -->
+    <a 
+      href="https://media1.placard.co.mz/redirect.aspx?pid=5413&bid=1690"
+      class="inline-block bg-green-500 hover:bg-green-600 text-black text-lg font-semibold py-3 px-6 rounded-full transition duration-300 animate-pulse"
+    >
+      Regista-te Já
+    </a>
+
+    <p class="text-sm text-gray-400 mt-6 animate-fade-in">
+      *Promoção válida para maiores de 18 anos. Joga com responsabilidade.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-600 text-sm pb-6">
+    © 2025 Placard Bet Moçambique · Todos os direitos reservados
+  </footer>
+
+  <!-- Countdown Script (1h) -->
+  <script>
+    const countdownEl = document.getElementById('countdown');
+    const end = new Date();
+    end.setTime(end.getTime() + 60 * 60 * 1000); // 1 hora
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = end - now;
+
+      if (diff <= 0) {
+        countdownEl.innerText = "Promoção terminada";
+        return;
+      }
+
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      countdownEl.innerText = `${h.toString().padStart(2, '0')}h ${m.toString().padStart(2, '0')}m ${s.toString().padStart(2, '0')}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
